@@ -1,0 +1,13 @@
+# System
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker volumes
+wp_data/
+db_data/
+
+# Env files
+.env
