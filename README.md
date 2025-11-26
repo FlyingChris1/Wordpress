@@ -12,43 +12,61 @@ a WordPress container and a MySQL database container.
 ## Prerequisites
 
 - Docker engine
+- Docker compose
 
 ## Quickstart
 
 - Clone the repository
 
 ```bash
-git clone <REPOSITORY_URL>
-cd <REPOSITORY_NAME>
+git clone https://github.com/FlyingChris1/Wordpress.git
+cd Wordpress
 ```
 
+- Edit example.env with your credentials
+
+```bash
+nano example.env
+```
+
+- convert example.env to .env
+
+```bash
+cp example.env .env
+```
+
+- Start Docker compose 
+
+```bash
+docker compose up -d
+```
+
+- access the project
+
+<your IP>:8080
 
 ## Usage
 
-- You need to create a .env file to fill the variables with you secret credentials
+- restart Container
 
 ```bash
-touch <name>.env
+docker compose restart
 ```
 
-- Edit the values of the .env file with your information & credentials:
+- stop Container
 
 ```bash
-nano <name>.env
+docker compose down -v
 ```
+
+- Enter Wordpress Container
 
 ```bash
-WORDPRESS_DB_NAME=<your DB name>
-WORDPRESS_DB_USER=<your DB user>
-WORDPRESS_DB_PASSWORD=<your DB password>
-WORDPRESS_DB_ROOTPASSWORD=<your DB root password>
-WORDPRESS_DB_HOST=<your DB Host>
+docker compose exec -it wordpress bash
 ```
 
-- Start & stop Docker compose 
+- Get Docker Compose logs
 
 ```bash
-docker compose up
-docker compose down
+docker compose logs
 ```
-

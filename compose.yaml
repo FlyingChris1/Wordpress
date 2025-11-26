@@ -2,7 +2,7 @@ services:
   db:
     image: mysql:5.7
     container_name: wp_db
-    restart: always
+    restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
@@ -14,9 +14,9 @@ services:
       - wpnet
 
   wordpress:
-    image: wordpress:latest
+    image: wordpress:6.8.3
     container_name: wp_wordpress
-    restart: always
+    restart: unless-stopped
     ports:
       - "8080:80"
     environment:
