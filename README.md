@@ -23,16 +23,16 @@ git clone https://github.com/FlyingChris1/Wordpress.git
 cd Wordpress
 ```
 
-- Edit example.env with your credentials
-
-```bash
-nano example.env
-```
-
 - convert example.env to .env
 
 ```bash
 cp example.env .env
+```
+
+- Edit the .env with your credentials & information
+
+```bash
+nano .env
 ```
 
 - Start Docker compose 
@@ -44,7 +44,7 @@ docker compose up -d
 - access the project
 
 ```bash
-<your IP>:8080
+http://<your IP>:8080
 ```
 
 ## Usage
