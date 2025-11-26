@@ -43,7 +43,9 @@ docker compose up -d
 
 - access the project
 
+```bash
 <your IP>:8080
+```
 
 ## Usage
 
